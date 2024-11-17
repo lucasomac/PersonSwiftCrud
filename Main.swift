@@ -8,7 +8,7 @@
 import Foundation
 
 func showMenu() {
-    print("**********Menu**********")
+    print("*********************Menu*********************")
     print("Choose an option:\n")
     print("1. Create Person")
     print("2. Update Person")
@@ -19,7 +19,7 @@ func showMenu() {
 }
 func buildTitle(title: String) -> String { return "\n\(title)\n"}
 func createPerson(listPeople: inout [String: [String]]){
-    print("**********Create Person**********")
+    print("****************Create Person*****************")
     print(buildTitle(title: "Insert Name:"))
     guard  let name: String = readLine(), !name.isEmpty else {
         return
@@ -42,7 +42,7 @@ func createPerson(listPeople: inout [String: [String]]){
 }
 
 func updatePerson(listPeople: inout [String: [String]]){
-    print("**********Update Person**********")
+    print("****************Update Person*****************")
     print(buildTitle(title: "Insert Name to update:"))
     guard  let name: String = readLine(), !name.isEmpty else {
         return
@@ -83,7 +83,7 @@ func deletePerson(listPeople: inout [String: [String]]){
 }
 
 func detailPeople(listPeople: [String: [String]], isSearch: Bool = false) {
-    print("**********Show Person**********")
+    print("******************Show Person*****************")
     if(isSearch) {
         print(buildTitle(title: "Insert Name to find:"))
         guard let name = readLine(), !name.isEmpty else {
@@ -142,4 +142,4 @@ func main() {
     }
 }
 
-//main()
+main()
