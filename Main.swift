@@ -81,6 +81,38 @@ func deletePerson(listPeople: inout [String: [String]]){
         print(buildTitle(title: "Person deleted successfully"))
     }
 }
+
+func detailPeople(listPeople: [String: [String]], isSearch: Bool = false) {
+    print("**********Show Person**********")
+    if(isSearch) {
+        print(buildTitle(title: "Insert Name to find:"))
+        guard let name = readLine(), !name.isEmpty else {
+            return
+        }
+        let message: String = buildTitle(title: "Searching...")
+        print(message)
+        let searchResult: [String] = listPeople[name] ?? []
+        if searchResult.isEmpty {
+            print(buildTitle(title: "No person found"))
+        } else {
+            displayPeople(listPeople: [name:searchResult])
+        }
+    }else{
+        displayPeople(listPeople: listPeople)
+    }
+}
+func displayPeople(listPeople: [String: [String]]) {
+    for (key, value) in listPeople {
+        print("----------------------------------------------")
+        print("--------------Person Information--------------")
+        print("----Name: \(key)")
+        print("----Email: \(value[0])")
+        print("----Phone: \(value[1])")
+        print("----Age: \(value[2])")
+        print("----------------------------------------------")
+    }
+}
+
 func main() {
     var peopleList: [String: [String]] = [:]
     var isFinished: Bool = false
@@ -94,13 +126,13 @@ func main() {
         case 1:
             createPerson(listPeople: &peopleList)
         case 2:
-            print("Update Person")
+            updatePerson(listPeople: &peopleList)
         case 3:
-            print("Delete Person")
+            deletePerson(listPeople: &peopleList)
         case 4:
-            print("List People")
+            detailPeople(listPeople: peopleList)
         case 5:
-            print("Search Person")
+            detailPeople(listPeople: peopleList, isSearch: true)
         case 6:
             isFinished = true
             print("Exiting...")
@@ -110,4 +142,4 @@ func main() {
     }
 }
 
-main()
+//main()
