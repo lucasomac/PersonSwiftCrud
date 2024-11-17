@@ -8,8 +8,8 @@
 import Foundation
 
 func showMenu() {
-    printf("**********Menu**********")
-    printf("Choose an option:\n")
+    print("**********Menu**********")
+    print("Choose an option:\n")
     print("1. Create Person")
     print("2. Update Person")
     print("3. Delete Person")
@@ -17,35 +17,64 @@ func showMenu() {
     print("5. Search Person")
     print("6. Exit")
 }
+func buildTitle(title: String) -> String { return "\n\(title)\n"}
 func createPerson(listPeople: inout [String: [String]]){
-    printf("**********Create Person**********")
-    print("Insert Name:")
+    print("**********Create Person**********")
+    print(buildTitle(title: "Insert Name:"))
     guard  let name: String = readLine(), !name.isEmpty else {
         return
     }
     if listPeople.keys.contains(name){
-        let message: String = "Person with name \(name) already exists."
+        let message: String = buildTitle(title: "Person with name \(name) already exists.")
         print(message)
         return
     }
-    print("Insert Email:")
-    guard  let email: Int = readLine(), !email.isEmpty{ return }
-    print("Insert Phone:")
-    guard  let phone: Int = readLine(), !phone.isEmpty{ return }
-    print("Insert Age:")
+    print(buildTitle(title: "Insert Email:"))
+    guard  let email: String = readLine(), !email.isEmpty else { return }
+    print(buildTitle(title: "Insert Phone:"))
+    guard  let phone: String = readLine(), !phone.isEmpty else { return }
+    print(buildTitle(title: "Insert Age:"))
     guard  let age: String = readLine(), !age.isEmpty else { return }
     
-    let person: [String] = [name, email, phone, age]
+    let person: [String] = [email, phone, age]
     listPeople[name] = person
-    print("Person created successfully.")
+    print(buildTitle(title: "Person created successfully."))
 }
 
+func updatePerson(listPeople: inout [String: [String]]){
+    print("**********Update Person**********")
+    print(buildTitle(title: "Insert Name to update:"))
+    guard  let name: String = readLine(), !name.isEmpty else {
+        return
+    }
+    if !listPeople.keys.contains(name){
+        let message: String = buildTitle(title: "Person with name \(name) does not exist.")
+        print(message)
+    } else {
+        print(buildTitle(title: "Insert the new Email:"))
+        guard let emailUpdated = readLine(), !emailUpdated.isEmpty else {
+            return
+        }
+        print(buildTitle(title: "Insert the new phone"))
+        guard let phoneUpdated = readLine(), !phoneUpdated.isEmpty else {
+            return
+        }
+        print(buildTitle(title: "Insert the new age"))
+        guard let ageUpdated = readLine(), !ageUpdated.isEmpty else {
+            return
+        }
+        let personUpdated: [String] = [emailUpdated, phoneUpdated, ageUpdated]
+        listPeople[name] = personUpdated
+        print(buildTitle(title: "Person updated successfully."))
+        
+    }
+}
 func main() {
     var peopleList: [String: [String]] = [:]
     var isFinished: Bool = false
     while !isFinished {
         showMenu()
-        guard let option = Int(readLine()) else {
+        guard let choose = readLine(), let option = Int(choose) else {
             print("Invalid option")
             continue
         }
