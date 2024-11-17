@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		329A62962CEA433B001F73FE /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329A62952CEA4337001F73FE /* Main.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		329A62792CEA42DC001F73FE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -27,22 +31,13 @@
 		329A62682CEA42DA001F73FE /* PersonSwiftCrud.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PersonSwiftCrud.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		329A62782CEA42DC001F73FE /* PersonSwiftCrudTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PersonSwiftCrudTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		329A62822CEA42DC001F73FE /* PersonSwiftCrudUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PersonSwiftCrudUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		329A62952CEA4337001F73FE /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		329A626A2CEA42DA001F73FE /* PersonSwiftCrud */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = PersonSwiftCrud;
-			sourceTree = "<group>";
-		};
-		329A627B2CEA42DC001F73FE /* PersonSwiftCrudTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = PersonSwiftCrudTests;
-			sourceTree = "<group>";
-		};
-		329A62852CEA42DC001F73FE /* PersonSwiftCrudUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = PersonSwiftCrudUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -75,9 +70,8 @@
 		329A625F2CEA42DA001F73FE = {
 			isa = PBXGroup;
 			children = (
+				329A62952CEA4337001F73FE /* Main.swift */,
 				329A626A2CEA42DA001F73FE /* PersonSwiftCrud */,
-				329A627B2CEA42DC001F73FE /* PersonSwiftCrudTests */,
-				329A62852CEA42DC001F73FE /* PersonSwiftCrudUITests */,
 				329A62692CEA42DA001F73FE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -130,9 +124,6 @@
 			dependencies = (
 				329A627A2CEA42DC001F73FE /* PBXTargetDependency */,
 			);
-			fileSystemSynchronizedGroups = (
-				329A627B2CEA42DC001F73FE /* PersonSwiftCrudTests */,
-			);
 			name = PersonSwiftCrudTests;
 			packageProductDependencies = (
 			);
@@ -153,9 +144,6 @@
 			dependencies = (
 				329A62842CEA42DC001F73FE /* PBXTargetDependency */,
 			);
-			fileSystemSynchronizedGroups = (
-				329A62852CEA42DC001F73FE /* PersonSwiftCrudUITests */,
-			);
 			name = PersonSwiftCrudUITests;
 			packageProductDependencies = (
 			);
@@ -175,6 +163,7 @@
 				TargetAttributes = {
 					329A62672CEA42DA001F73FE = {
 						CreatedOnToolsVersion = 16.0;
+						LastSwiftMigration = 1600;
 					};
 					329A62772CEA42DC001F73FE = {
 						CreatedOnToolsVersion = 16.0;
@@ -236,6 +225,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				329A62962CEA433B001F73FE /* Main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,6 +383,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"PersonSwiftCrud/Preview Content\"";
@@ -411,6 +402,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.lucolimac.PersonSwiftCrud;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "PersonSwiftCrud-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -421,6 +414,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"PersonSwiftCrud/Preview Content\"";
@@ -439,6 +433,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.lucolimac.PersonSwiftCrud;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "PersonSwiftCrud-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
