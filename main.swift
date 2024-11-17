@@ -98,7 +98,11 @@ func detailPeople(listPeople: [String: [String]], isSearch: Bool = false) {
             displayPeople(listPeople: [name:searchResult])
         }
     }else{
-        displayPeople(listPeople: listPeople)
+        if listPeople.isEmpty {
+            print(buildTitle(title: "No people registered!"))
+        } else {
+            displayPeople(listPeople: listPeople)
+        }
     }
 }
 func displayPeople(listPeople: [String: [String]]) {
