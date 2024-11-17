@@ -69,6 +69,18 @@ func updatePerson(listPeople: inout [String: [String]]){
         
     }
 }
+func deletePerson(listPeople: inout [String: [String]]){
+    print(buildTitle(title: "Insert name of personto delete"))
+    guard let name = readLine(), !name.isEmpty else {
+        return
+    }
+    if listPeople.removeValue(forKey: name) == nil {
+        let message: String = buildTitle(title: "Person with name \(name) does not exist.")
+        print(message)
+    } else {
+        print(buildTitle(title: "Person deleted successfully"))
+    }
+}
 func main() {
     var peopleList: [String: [String]] = [:]
     var isFinished: Bool = false
